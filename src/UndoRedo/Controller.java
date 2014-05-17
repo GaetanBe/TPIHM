@@ -2,19 +2,23 @@ package UndoRedo;
 
 public class Controller {
 
-	public Controller(Modele modele, Fenetre fenetre) {
+	public Controller(ModeleUndoable modele, Fenetre fenetre) {
 	
 		Integer tmp = new Integer(modele.getEntier());
 		fenetre.getText().setText(tmp.toString());
 		
-		ActionMoins actionMoins = new ActionMoins(modele);
-		ActionPlus actionPlus = new ActionPlus(modele);
+		ActionMoinsUndoable ActionMoinsUndoable = new ActionMoinsUndoable(modele);
+		ActionPlusUndoable ActionPlusUndoable = new ActionPlusUndoable(modele);
 		ActionTexte actionTexte = new ActionTexte(modele, fenetre);
+		ActionUndo undo = new ActionUndo(modele);
+		ActionRedo redo = new ActionRedo(modele);
 		
 		//liens
 		fenetre.getText().addActionListener(actionTexte);
-		fenetre.getBoutonPlus().addActionListener(actionPlus);
-		fenetre.getBoutonMoins().addActionListener(actionMoins);
+		fenetre.getBoutonPlus().addActionListener(ActionPlusUndoable);
+		fenetre.getBoutonMoins().addActionListener(ActionMoinsUndoable);
+		fenetre.getBoutonUndo().addActionListener(undo);
+		fenetre.getBoutonRedo().addActionListener(redo);
 		
 		//Oberservateurs
 		IntegerObserver obs = new IntegerObserver(fenetre);

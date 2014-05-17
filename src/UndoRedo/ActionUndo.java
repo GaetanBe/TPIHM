@@ -5,32 +5,31 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
 
-public class ActionMoins extends AbstractAction {
+public class ActionUndo extends AbstractAction {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8916069297362948365L;
+	ModeleUndoable modele;
 
-	protected Modele modele;
-
-	public ActionMoins(Modele m) {
+	public ActionUndo(ModeleUndoable m) {
 		modele = m;
 	}
 
-	public ActionMoins(String arg0) {
+	public ActionUndo(String arg0) {
 		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ActionMoins(String arg0, Icon arg1) {
+	public ActionUndo(String arg0, Icon arg1) {
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		try {
-			modele.moins();
-		} catch (IntegerOutOfRangeException e) {
-			System.out.println(e.getMessage());
-		}
-
+		modele.getUndoManager().undo();
 	}
 
 }

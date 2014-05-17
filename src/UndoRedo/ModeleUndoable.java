@@ -8,7 +8,12 @@ public class ModeleUndoable extends Modele {
 
 	public ModeleUndoable(int entier) throws IntegerOutOfRangeException {
 		super(entier);
-		// TODO Auto-generated constructor stub
+		
+		undoManager = new UndoManager();
+	}
+
+	public UndoManager getUndoManager() {
+		return undoManager;
 	}
 
 }
