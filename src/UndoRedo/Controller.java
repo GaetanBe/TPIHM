@@ -13,12 +13,15 @@ public class Controller {
 		ActionUndo undo = new ActionUndo(modele);
 		ActionRedo redo = new ActionRedo(modele);
 		
+		//TextUndoableEditListener actionTexteU = new TextUndoableEditListener(modele);
+		
 		//liens
 		fenetre.getText().addActionListener(actionTexte);
-		fenetre.getBoutonPlus().addActionListener(ActionPlusUndoable);
+		fenetre.getBoutonPlus().addActionListener(	ActionPlusUndoable);
 		fenetre.getBoutonMoins().addActionListener(ActionMoinsUndoable);
 		fenetre.getBoutonUndo().addActionListener(undo);
 		fenetre.getBoutonRedo().addActionListener(redo);
+		//fenetre.getText().getDocument().addUndoableEditListener(actionTexteU);
 		
 		//Oberservateurs
 		IntegerObserver obs = new IntegerObserver(fenetre);
