@@ -17,17 +17,13 @@ public class Fenetre extends JFrame {
 	private JButton bt2;
 	private JTextField text;
 	
-	private ResourceBundle bundle;
-	
 	public Fenetre(String arg0) throws HeadlessException {
 
 		super("Window");
 		
-		Locale[] locales = { Locale.GERMAN, Locale.ENGLISH };
+		//Locale[] locales = { Locale.GERMAN, Locale.ENGLISH };
 
-		bundle = ResourceBundle.getBundle("Text", this.getLocale());
-		
-		this.setName(bundle.getString(Constants.windowTitle));
+		this.setName(Constants.bundle.getString(Constants.windowTitle));
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(300, 150);
@@ -35,8 +31,8 @@ public class Fenetre extends JFrame {
 		
 		JPanel p = new JPanel();
 		
-		bt1 = new JButton(bundle.getString(Constants.buttonPlusText));
-		bt2 = new JButton(Constants.buttonMinusText);
+		bt1 = new JButton(Constants.bundle.getString(Constants.buttonPlusText));
+		bt2 = new JButton(Constants.bundle.getString(Constants.buttonMinusText));
 		text = new JTextField("");
 		text.setColumns(10);
 		p.add(text);

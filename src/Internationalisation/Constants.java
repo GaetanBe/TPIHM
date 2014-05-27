@@ -1,9 +1,13 @@
 package Internationalisation;
 
+import java.util.ResourceBundle;
+
 public interface Constants {
 	
-	public final static String windowTitle = "Window";
-	public final static String buttonPlusText = "Plus";
-	public final static String buttonMinusText = "Minus";
+	public static final ResourceBundle bundle = ResourceBundle.getBundle("translate");
+	
+	public static final String windowTitle = "Window";
+	public static final String buttonPlusText = "Plus";
+	public static final String buttonMinusText = "Minus";
 
 }

@@ -17,7 +17,7 @@ public class Controller {
 		
 		//liens
 		fenetre.getText().addActionListener(actionTexte);
-		fenetre.getBoutonPlus().addActionListener(	ActionPlusUndoable);
+		fenetre.getBoutonPlus().addActionListener(ActionPlusUndoable);
 		fenetre.getBoutonMoins().addActionListener(ActionMoinsUndoable);
 		fenetre.getBoutonUndo().addActionListener(undo);
 		fenetre.getBoutonRedo().addActionListener(redo);
